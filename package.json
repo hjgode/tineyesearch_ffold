@@ -1,7 +1,7 @@
 {
   "title": "My TinEye Addon",
   "name": "tineyesearch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A basic add-on",
   "main": "tineyesearch.js",
   "author": "josef",
@@ -15,5 +15,69 @@
   "license": "MIT",
   "keywords": [
     "jetpack"
-  ]
+  ],
+  "preferences": [{
+        "name": "TineyeSortType",
+        "title": "Tineye Sort Type",
+        "description": "Sort by best match, most changed, newest, oldest, size, none [size|score|none|crawl_date]",
+        "type": "menulist",
+        "options": [
+          {
+              "value": "",
+              "label": "none"
+          },
+          {
+              "value": "score",
+              "label": "best match"
+          },
+          {
+              "value": "size",
+              "label": "size"
+          },
+          {
+              "value": "crawl_date",
+              "label": "time"
+          }
+        ],
+		"value": "size"
+      },
+      {
+        "name": "TineyeSortOrder",
+        "title": "Tineye Sort Order",
+        "description": "Sort asc-ending or desc-ending [desc|asc]",
+        "type": "menulist",
+        "options": [
+          {
+              "value": "asc",
+              "label": "ascending"
+          },
+          {
+              "value": "desc",
+              "label": "descending"
+          }
+        ],
+		"value": "desc"
+	  },
+	  {
+        "name": "ShowResultAs",
+        "title": "Show Result as",
+        "description": "Show result in new tab in foreground or background or current tab [foreground|background|current]",
+        "type": "menulist",
+        "options": [
+          {
+              "value": "foreground",
+              "label": "foreground"
+          },
+          {
+              "value": "background",
+              "label": "background"
+          },
+          {
+              "value": "current",
+              "label": "current tab"
+          }
+        ],
+		"value": "foreground"
+      }
+    ]
 }
