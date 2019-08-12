@@ -1,0 +1,19 @@
+{
+  "title": "My TinEye Addon",
+  "name": "tineyesearch",
+  "version": "0.0.2",
+  "description": "A basic add-on",
+  "main": "tineyesearch.js",
+  "author": "josef",
+  "permissions": [
+    "<all_urls>",
+    "tabs"
+  ],
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}
