@@ -20,8 +20,7 @@ require("sdk/simple-prefs").on("", onPrefChange);
 
 var menuItem = contextMenu.Item({
   label: "Search at TinEye",
-  accesskey: "t",
-	context: contextMenu.SelectorContext("a[href], img"),
+  context: contextMenu.SelectorContext("a[href], img"),
   contentScript: 'self.on("click", function (node, data) {' +
                  '  console.log("Item clicked: " + node.currentSrc);' +
 				 '  self.postMessage(node.currentSrc); ' +
