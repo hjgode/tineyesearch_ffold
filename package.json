@@ -1,8 +1,8 @@
 {
   "title": "My TinEye Addon",
   "name": "tineyesearch",
-  "version": "0.0.3",
-  "description": "A basic add-on",
+  "version": "0.0.4",
+  "description": "A basic TinEyey Search add-on",
   "main": "tineyesearch.js",
   "author": "josef",
   "permissions": [

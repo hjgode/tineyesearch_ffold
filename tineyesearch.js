@@ -20,7 +20,7 @@ require("sdk/simple-prefs").on("", onPrefChange);
 
 var menuItem = contextMenu.Item({
   label: "Search at TinEye",
-  accesskey: "t",
+  accesskey: "5",
 	context: contextMenu.SelectorContext("a[href], img"),
   contentScript: 'self.on("click", function (node, data) {' +
                  '  console.log("Item clicked: " + node.currentSrc);' +
@@ -76,7 +76,11 @@ var menuItem = contextMenu.Item({
 		console.log("sortType: " + sortType);
 		console.log("sortOrder: " + sortOrder);
 		console.log("showResultAs: " + showResultAs);
-		var newUrl = "https://tineye.com/search/?pluginver=firefox-1.4.1" + query_string + "&url=" + selectionText;
+        //todo: https://foo.com/John Doe.jpg does not work, even with %20 replacement
+        //replace existing blanks in file name: ie John Doe.jpg => John%20Doe.jpg
+        var selectionTextNew = selectionText.replace(/ /g, "%20"); //encodeURI(selectionText);
+        console.log("selectionTextNew="+selectionTextNew);
+		var newUrl = "https://tineye.com/search/?pluginver=firefox-1.4.1" + query_string + "&url=" + selectionTextNew;
 		console.log("URL="+newUrl);
 		// "https://tineye.com/search/?pluginver=firefox-1.4.1&sort=size&order=desc&url=" + selectionText);
 		switch(showResultAs){
