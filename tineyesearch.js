@@ -78,7 +78,7 @@ var menuItem = contextMenu.Item({
 		console.log("showResultAs: " + showResultAs);
         //todo: https://foo.com/John Doe.jpg does not work, even with %20 replacement
         //replace existing blanks in file name: ie John Doe.jpg => John%20Doe.jpg
-        var selectionTextNew = selectionText.replace(/ /g, "%20"); //encodeURI(selectionText);
+        var selectionTextNew = encodeURIComponent(selectionText);
         console.log("selectionTextNew="+selectionTextNew);
 		var newUrl = "https://tineye.com/search/?pluginver=firefox-1.4.1" + query_string + "&url=" + selectionTextNew;
 		console.log("URL="+newUrl);
